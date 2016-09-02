@@ -1,0 +1,27 @@
+{
+  "name": "myhero.ku",
+  "version": "1.0.0",
+  "description": "a node.js web app in heroku",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "5.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giannoudak/myhero.ku.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giannoudak/myhero.ku/issues"
+  },
+  "homepage": "https://github.com/giannoudak/myhero.ku#readme",
+  "dependencies": {
+    "ejs": "^2.5.1",
+    "express": "^4.14.0"
+  }
+}
