@@ -1,6 +1,6 @@
 var express = require('express');
-var http = require('http');
 var request = require('request');
+var scoreboard = require('./app/scoreboard');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -16,14 +16,19 @@ app.get('/', function(request, response) {
 });
 
 app.get('/scoreboard', function(req, res){
-    url = 'http://www.superleaguegreece.net/en/scoreboard/2016-2017-superleague-61';
-    console.log('ddd');
+    
+    url = scoreboard.scoreboardURL;
+
     request(url, function(error, response, html){
         if (!error){
-            console.log('sssssssss');
-            console.log(html);
+            data = scoreboard.getScore(html);
+            //res.render('pages/scoreboard')
+            res.contentType('application/json');
+            res.send(JSON.stringify(data));
+            
         }else {
             console.log(error);
+            res.render('share/error');
         }
     });
 
